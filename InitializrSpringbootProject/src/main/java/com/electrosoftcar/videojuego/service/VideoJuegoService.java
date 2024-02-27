@@ -7,6 +7,7 @@ package com.electrosoftcar.videojuego.service;
 import com.electrosoftcar.videojuego.domain.VideoJuego;
 import com.electrosoftcar.videojuego.repository.VideoJuegoRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,7 +18,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class VideoJuegoService {
     
-    public final VideoJuegoRepository videoJuegoRepository;
+    //@Autowired
+    private final VideoJuegoRepository videoJuegoRepository;
 
     public VideoJuegoService(VideoJuegoRepository videoJuegoRepository) {
         this.videoJuegoRepository = videoJuegoRepository;

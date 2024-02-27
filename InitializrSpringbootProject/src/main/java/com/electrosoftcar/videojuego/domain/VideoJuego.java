@@ -4,7 +4,6 @@
  */
 package com.electrosoftcar.videojuego.domain;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,17 +14,17 @@ import javax.persistence.ManyToOne;
  *
  * @author HDAVELLA
  */
-
 @Entity
 public class VideoJuego {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String descripcion;
     private String url;
-    
+    private String imgname;
+
     @ManyToOne
     private Proveedor proveedor;
 
@@ -52,7 +51,7 @@ public class VideoJuego {
     public void setUrl(String url) {
         this.url = url;
     }
-    
+
     public Integer getId() {
         return id;
     }
@@ -69,9 +68,17 @@ public class VideoJuego {
         this.proveedor = proveedor;
     }
 
+    public String getImgname() {
+        return imgname;
+    }
+
+    public void setImgname(String imgname) {
+        this.imgname = imgname;
+    }
+
     @Override
     public String toString() {
         return "VideoJuego{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", url=" + url + ", proveedor=" + proveedor.getId() + '}';
     }
-    
+
 }
